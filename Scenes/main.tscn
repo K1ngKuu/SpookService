@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://d6pxrpycp3co"]
+
+[ext_resource type="PackedScene" uid="uid://c8cc4hgbuphrf" path="res://Scenes/player.tscn" id="1_jjgbg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+
+[node name="Main" type="Node3D"]
+
+[node name="TempRoom" type="StaticBody3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="TempRoom"]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
+mesh = SubResource("BoxMesh_7dm0k")
+skeleton = NodePath("../..")
+
+[node name="Wall" type="MeshInstance3D" parent="TempRoom/Floor"]
+transform = Transform3D(0.0625, 0, 0, 0, 3, 0, 0, 0, 0.9375, 0.46875, 2, 0.03125)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="Wall2" type="MeshInstance3D" parent="TempRoom/Floor"]
+transform = Transform3D(0.0625, 0, 0, 0, 3, 0, 0, 0, 0.9375, -0.46875, 2, 0.03125)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="Wall3" type="MeshInstance3D" parent="TempRoom/Floor"]
+transform = Transform3D(-2.73196e-09, 0, 1, 0, 6, 0, -0.0625, 0, -4.37114e-08, 0, 3.5, -0.46875)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempRoom"]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
+shape = SubResource("BoxShape3D_7dm0k")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="TempRoom"]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 15, 7.5, 2, 0.5)
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="TempRoom"]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 15, -7.5, 2, 0.5)
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="TempRoom"]
+transform = Transform3D(-4.37114e-08, 0, 16, 0, 6, 0, -1, 0, -6.99382e-07, 0, 3.5, -7.5)
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="CameraRig" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 8, 12)
+size = 18.32
+
+[node name="TempLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
