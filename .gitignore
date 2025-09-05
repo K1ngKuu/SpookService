@@ -6,6 +6,7 @@
 .import/
 export.cfg
 export_credentials.cfg
+export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -14,3 +15,48 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Source files (keep local, export .glb/.fbx for Godot)
+*.blend
+*.blend1
+*.blend2
+*.blend3
+*.blend4
+*.blend5
+*.blend6
+*.blend7
+*.blend8
+*.blend9
+*.blend@
+*.blend~
+
+# Builds
+*.exe
+*.dll
+*.so
+*.dylib
+*.apk
+*.zip
+*.tar.gz
+*.pck
+
+# Keep only exported .wav/.ogg/.mp3 in repo
+*.als
+*.flp
+*.logic
+*.band
+*.project
+*.bmsc
+*.midi
+*.mid
+
+# General OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE clutter
+.vscode/
+.idea/
+*.swp
+*.swo
