@@ -10,7 +10,7 @@
 mesh = SubResource("PlaneMesh_mwb40")
 
 [node name="tempPlayer" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 mesh = SubResource("CapsuleMesh_80nbo")
 
 [node name="Camera" type="Camera3D" parent="."]
